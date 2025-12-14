@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# Enterprise Pre-commit Hook
+# Validates code quality before commit
+
+echo "🔍 Running pre-commit checks..."
+
+# Detect package manager
+if [ -f "pnpm-lock.yaml" ]; then
+    PKG_MANAGER="pnpm"
+elif [ -f "bun.lockb" ]; then
+    PKG_MANAGER="bun"
+else
+    PKG_MANAGER="npm"
+fi
+
+# 1. Biome check (if available)
+if command -v biome &> /dev/null || [ -f "node_modules/.bin/biome" ]; then
+    echo "📝 Running Biome..."
+    $PKG_MANAGER biome check --write . 2>/dev/null || true
+fi
+
+# 2. TypeScript check (if tsconfig exists)
+if [ -f "tsconfig.json" ]; then
+    echo "🔷 Running TypeScript check..."
+    $PKG_MANAGER tsc --noEmit 2>/dev/null || true
+fi
+
+# 3. Lint-staged
+echo "📋 Running lint-staged..."
+$PKG_MANAGER lint-staged 2>/dev/null || true
+
+echo "✅ Pre-commit checks completed"

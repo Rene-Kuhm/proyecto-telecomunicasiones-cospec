@@ -1,0 +1,68 @@
+# <type>(<scope>): <subject>
+#
+# Por qué:
+# - [Contexto del problema / Motivación / Métrica]
+#
+# Qué:
+# - [Cambio 1]
+# - [Cambio 2]
+#
+# Impacto:
+# - [Efecto esperado en negocio/proyecto]
+#
+# Refs: #issue
+#
+# ────────────────────────────────────────────────────────────────
+# TYPES:
+#   feat:     Nueva funcionalidad
+#   fix:      Bug fix
+#   docs:     Documentación
+#   style:    Formato (Biome, no afecta lógica)
+#   refactor: Refactoring (no cambia funcionalidad)
+#   perf:     Performance improvement
+#   test:     Tests
+#   build:    Build system (deps, webpack, etc)
+#   ci:       CI/CD changes
+#   chore:    Mantenimiento
+#   revert:   Revert commit anterior
+#
+# SCOPES (ejemplos):
+#   auth, cart, products, api, ui, db, payments, etc.
+#
+# SUBJECT:
+#   - Imperativo, presente: "add" no "added" ni "adds"
+#   - Minúsculas (lower-case)
+#   - Sin punto final
+#   - Máximo 72 caracteres
+#
+# BODY:
+#   - Explica el POR QUÉ (contexto del problema)
+#   - Explica el QUÉ (solución implementada)
+#   - Explica el IMPACTO (efecto en negocio/proyecto)
+#   - Máximo 100 caracteres por línea
+#
+# FOOTER:
+#   - Breaking changes: BREAKING CHANGE: description
+#   - Issues: Closes #123, Fixes #456
+#   - Reviewers: Reviewed-by: Name
+#
+# EJEMPLOS:
+#
+#   feat(cart): add guest checkout flow
+#
+#   Por qué:
+#   - 40% usuarios abandonan en login screen
+#   - Alta fricción en proceso de compra
+#
+#   Qué:
+#   - Implementar checkout sin cuenta
+#   - Opción de crear cuenta post-compra
+#   - Guardar email para envío de orden
+#
+#   Impacto:
+#   - Incremento proyectado: +15% conversiones
+#   - Reducción abandono de carrito
+#
+#   Closes #234
+#
+# ────────────────────────────────────────────────────────────────
